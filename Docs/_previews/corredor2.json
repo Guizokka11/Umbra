@@ -1,0 +1,227 @@
+{
+"W": 3000,
+"H": 1000,
+"layers": [
+{
+"i": 0,
+"name": "Papel",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+3000,
+1000
+]
+},
+{
+"i": 1,
+"name": "Camada 1",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+3000,
+1000
+]
+},
+{
+"i": 2,
+"name": "Camada 10",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+4,
+0,
+2722,
+956
+]
+},
+{
+"i": 3,
+"name": "Camada 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-14,
+696,
+2988,
+1133
+]
+},
+{
+"i": 4,
+"name": "Camada 12",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+617,
+715,
+1775,
+1000
+]
+},
+{
+"i": 5,
+"name": "Camada 11",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+0,
+0
+]
+},
+{
+"i": 6,
+"name": "Camada 5",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+83,
+1000
+]
+},
+{
+"i": 7,
+"name": "Camada 9",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1400,
+549,
+1409,
+587
+]
+},
+{
+"i": 8,
+"name": "Camada 4",
+"vis": true,
+"op": 158,
+"blend": "NORMAL",
+"bbox": [
+549,
+-16,
+3062,
+902
+]
+},
+{
+"i": 9,
+"name": "Camada 13",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+669,
+530,
+727,
+629
+]
+},
+{
+"i": 10,
+"name": "Camada 14",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+786,
+579,
+948,
+630
+]
+},
+{
+"i": 11,
+"name": "Camada 15",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1197,
+0,
+1602,
+411
+]
+},
+{
+"i": 12,
+"name": "Camada 6",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1550,
+0,
+3000,
+1000
+]
+},
+{
+"i": 13,
+"name": "Camada 8",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1128,
+2,
+2377,
+610
+]
+},
+{
+"i": 14,
+"name": "Camada 7",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1065,
+0,
+3000,
+1000
+]
+},
+{
+"i": 15,
+"name": "Camada 3",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+147,
+645,
+258,
+897
+]
+},
+{
+"i": 16,
+"name": "Camada 16",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+233,
+400,
+452,
+584
+]
+}
+]
+}

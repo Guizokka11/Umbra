@@ -1,0 +1,5 @@
+Luma (-8.52, 0.05, -2.29)  embaixo: Chao (em volta do buraco) @(-8.52, 0.00, -2.29)  segurando: False  alvo: Porta_Dormitorio1
+  Frente_Invisivel (0.00, 3.00, -3.12) (48.51, 6.00, 0.50)
+  Chao (em volta do buraco) (-9.00, -0.25, -5.61) (30.51, 0.50, 16.82)
+  Parede_0 (-9.39, 3.00, -1.56) (1.06, 6.00, 3.58)
+  Luma (-8.52, 0.55, -2.29) (0.40, 1.00, 0.40)

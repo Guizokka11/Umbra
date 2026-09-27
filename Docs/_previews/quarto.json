@@ -1,0 +1,383 @@
+{
+"W": 2999,
+"H": 1000,
+"layers": [
+{
+"i": 0,
+"name": "Papel",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+2999,
+1000
+]
+},
+{
+"i": 1,
+"name": "lado de fora",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+2999,
+1000
+]
+},
+{
+"i": 2,
+"name": "parede",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-12,
+-40,
+3005,
+1040
+]
+},
+{
+"i": 3,
+"name": "cortina 3",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2418,
+163,
+3000,
+697
+]
+},
+{
+"i": 4,
+"name": "cortina 1",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+154,
+637,
+689
+]
+},
+{
+"i": 5,
+"name": "quadro",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1597,
+259,
+1894,
+380
+]
+},
+{
+"i": 6,
+"name": "chao",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+716,
+2999,
+1040
+]
+},
+{
+"i": 7,
+"name": "cama 4",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+347,
+456,
+1434,
+857
+]
+},
+{
+"i": 8,
+"name": "cama frente 1",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-163,
+556,
+2062,
+1377
+]
+},
+{
+"i": 9,
+"name": "mc",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1139,
+601,
+1313,
+639
+]
+},
+{
+"i": 10,
+"name": "cobertor",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1177,
+588,
+1378,
+668
+]
+},
+{
+"i": 11,
+"name": "cama 3",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+677,
+579,
+997,
+891
+]
+},
+{
+"i": 12,
+"name": "cobertor",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1197,
+734,
+1376,
+882
+]
+},
+{
+"i": 13,
+"name": "cama 5",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1514,
+593,
+1825,
+855
+]
+},
+{
+"i": 14,
+"name": "cama tras 1",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-198,
+561,
+417,
+897
+]
+},
+{
+"i": 15,
+"name": "cama 1",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-180,
+624,
+435,
+960
+]
+},
+{
+"i": 16,
+"name": "cama 7",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2546,
+591,
+3089,
+988
+]
+},
+{
+"i": 17,
+"name": "cama tras 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+119,
+570,
+531,
+967
+]
+},
+{
+"i": 18,
+"name": "cama 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+97,
+624,
+848,
+960
+]
+},
+{
+"i": 19,
+"name": "cama 6",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2201,
+596,
+2952,
+932
+]
+},
+{
+"i": 20,
+"name": "cama frente 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1795,
+797,
+3454,
+1552
+]
+},
+{
+"i": 21,
+"name": "Camada 6",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+564,
+508,
+1222,
+879
+]
+},
+{
+"i": 22,
+"name": "Camada 6 Copiar",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1411,
+530,
+2039,
+884
+]
+},
+{
+"i": 23,
+"name": "Camada 5",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1153,
+-40,
+1397,
+1006
+]
+},
+{
+"i": 24,
+"name": "luz",
+"vis": true,
+"op": 122,
+"blend": "NORMAL",
+"bbox": [
+836,
+218,
+1814,
+1000
+]
+},
+{
+"i": 25,
+"name": "sombra geral",
+"vis": true,
+"op": 89,
+"blend": "NORMAL",
+"bbox": [
+-27,
+-18,
+3010,
+1004
+]
+},
+{
+"i": 26,
+"name": "porta 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2025,
+371,
+2666,
+791
+]
+},
+{
+"i": 27,
+"name": "porta 1",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2000,
+346,
+2711,
+797
+]
+},
+{
+"i": 28,
+"name": "Foto 1",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1151,
+624,
+1315,
+894
+]
+}
+]
+}

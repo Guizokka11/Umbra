@@ -1,0 +1,266 @@
+{
+"W": 4826,
+"H": 1000,
+"layers": [
+{
+"i": 0,
+"name": "Papel",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+4826,
+1000
+]
+},
+{
+"i": 1,
+"name": "Camada 1",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+4847,
+1000
+]
+},
+{
+"i": 2,
+"name": "Camada 6",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+4826,
+1000
+]
+},
+{
+"i": 3,
+"name": "Camada 5",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+0,
+0
+]
+},
+{
+"i": 4,
+"name": "Camada 3",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+0,
+0
+]
+},
+{
+"i": 5,
+"name": "Camada 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-44,
+737,
+4847,
+1060
+]
+},
+{
+"i": 6,
+"name": "Camada 17",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+124,
+821,
+3977,
+961
+]
+},
+{
+"i": 7,
+"name": "Camada 4",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-1045,
+-31,
+7138,
+969
+]
+},
+{
+"i": 8,
+"name": "Camada 7",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+2147,
+823
+]
+},
+{
+"i": 9,
+"name": "Camada 8",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+4651,
+0,
+4826,
+1000
+]
+},
+{
+"i": 10,
+"name": "Camada 13",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+4682,
+335,
+4790,
+947
+]
+},
+{
+"i": 11,
+"name": "Camada 9",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2214,
+616,
+2851,
+787
+]
+},
+{
+"i": 12,
+"name": "Camada 9 Copiar",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2975,
+615,
+3769,
+796
+]
+},
+{
+"i": 13,
+"name": "Camada 9 Copiar 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+4152,
+610,
+4646,
+781
+]
+},
+{
+"i": 14,
+"name": "Camada 10",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2123,
+596,
+4671,
+776
+]
+},
+{
+"i": 15,
+"name": "Camada 11",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1477,
+342,
+2229,
+791
+]
+},
+{
+"i": 16,
+"name": "Camada 11 Copiar",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1477,
+342,
+2229,
+791
+]
+},
+{
+"i": 17,
+"name": "Camada 12",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+4674,
+336,
+4751,
+980
+]
+},
+{
+"i": 18,
+"name": "Camada 15",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+3870,
+587,
+4019,
+830
+]
+},
+{
+"i": 19,
+"name": "Camada 16",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+186,
+109,
+4792,
+1000
+]
+}
+]
+}

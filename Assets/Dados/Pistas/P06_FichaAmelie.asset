@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c5e7322b80c5544a828d016a660486, type: 3}
+  m_Name: P06_FichaAmelie
+  m_EditorClassIdentifier: Assembly-CSharp::ClueData
+  id: P06_FichaAmelie
+  title: "Ficha 0416 \u2014 AMELIE"
+  text: "Situa\xE7\xE3o: TRANSFERIDA.\n\nMas o carimbo preto est\xE1 nela. Tinta
+    nova, borrada, como se algu\xE9m tivesse carimbado com pressa... com a m\xE3o
+    pequena."
+  image: {fileID: 0}
+  origin: 2
+  arc: 2

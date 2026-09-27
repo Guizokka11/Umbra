@@ -1,0 +1,513 @@
+{
+"W": 2999,
+"H": 1000,
+"layers": [
+{
+"i": 0,
+"name": "Papel",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+2999,
+1000
+]
+},
+{
+"i": 1,
+"name": "Camada 1",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-24,
+-40,
+3003,
+1040
+]
+},
+{
+"i": 2,
+"name": "Camada 11",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+2999,
+1000
+]
+},
+{
+"i": 3,
+"name": "Camada 8",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+0,
+0
+]
+},
+{
+"i": 4,
+"name": "Camada 18",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+0,
+0
+]
+},
+{
+"i": 5,
+"name": "Camada 13",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+2999,
+859
+]
+},
+{
+"i": 6,
+"name": "Camada 19",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+0,
+0
+]
+},
+{
+"i": 7,
+"name": "Camada 17",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2418,
+163,
+3000,
+697
+]
+},
+{
+"i": 8,
+"name": "Camada 17 Copiar",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+154,
+637,
+689
+]
+},
+{
+"i": 9,
+"name": "Camada 15",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+980,
+273,
+1277,
+394
+]
+},
+{
+"i": 10,
+"name": "Camada 15 Copiar",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1116,
+208,
+1415,
+332
+]
+},
+{
+"i": 11,
+"name": "Camada 3",
+"vis": true,
+"op": 0,
+"blend": "NORMAL",
+"bbox": [
+-12,
+-40,
+2512,
+1040
+]
+},
+{
+"i": 12,
+"name": "Camada 3 Copiar",
+"vis": true,
+"op": 112,
+"blend": "NORMAL",
+"bbox": [
+-12,
+-40,
+3005,
+1040
+]
+},
+{
+"i": 13,
+"name": "Camada 16",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+224,
+2854,
+637
+]
+},
+{
+"i": 14,
+"name": "Camada 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+716,
+2999,
+1040
+]
+},
+{
+"i": 15,
+"name": "Camada 4",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+347,
+456,
+1434,
+857
+]
+},
+{
+"i": 16,
+"name": "Camada 4 Copiar 11",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1583,
+1361,
+4068,
+2183
+]
+},
+{
+"i": 17,
+"name": "Camada 9",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+718,
+587,
+1433,
+727
+]
+},
+{
+"i": 18,
+"name": "Camada 9 Copiar",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1175,
+587,
+1376,
+667
+]
+},
+{
+"i": 19,
+"name": "Camada 10",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1160,
+602,
+1188,
+637
+]
+},
+{
+"i": 20,
+"name": "Camada 4 Copiar 5",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1964,
+585,
+2275,
+847
+]
+},
+{
+"i": 21,
+"name": "Camada 4 Copiar 6",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-198,
+561,
+417,
+897
+]
+},
+{
+"i": 22,
+"name": "Camada 4 Copiar 7",
+"vis": false,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-180,
+624,
+435,
+960
+]
+},
+{
+"i": 23,
+"name": "Camada 4 Copiar",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2546,
+591,
+3089,
+988
+]
+},
+{
+"i": 24,
+"name": "Camada 4 Copiar 8",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+0,
+578,
+751,
+914
+]
+},
+{
+"i": 25,
+"name": "Camada 4 Copiar 9",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2201,
+596,
+2952,
+932
+]
+},
+{
+"i": 26,
+"name": "Camada 4 Copiar 12",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+2228,
+742,
+3843,
+1477
+]
+},
+{
+"i": 27,
+"name": "Camada 4 Copiar 2",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+314,
+757,
+892,
+1321
+]
+},
+{
+"i": 28,
+"name": "Camada 4 Copiar 4",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+314,
+757,
+892,
+1321
+]
+},
+{
+"i": 29,
+"name": "Camada 4 Copiar 3",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1083,
+571,
+1417,
+897
+]
+},
+{
+"i": 30,
+"name": "Camada 6",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+549,
+485,
+1207,
+856
+]
+},
+{
+"i": 31,
+"name": "Camada 4 Copiar 10",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+-374,
+505,
+1851,
+1326
+]
+},
+{
+"i": 32,
+"name": "Camada 5",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+1677,
+1,
+1921,
+1047
+]
+},
+{
+"i": 33,
+"name": "Camada 12",
+"vis": true,
+"op": 0,
+"blend": "NORMAL",
+"bbox": [
+0,
+0,
+3009,
+1000
+]
+},
+{
+"i": 34,
+"name": "Camada 5 Copiar",
+"vis": true,
+"op": 105,
+"blend": "NORMAL",
+"bbox": [
+1358,
+259,
+2336,
+1041
+]
+},
+{
+"i": 35,
+"name": "Camada 7",
+"vis": true,
+"op": 36,
+"blend": "NORMAL",
+"bbox": [
+-27,
+-18,
+3010,
+1004
+]
+},
+{
+"i": 36,
+"name": "Camada 21",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+650,
+338,
+1291,
+758
+]
+},
+{
+"i": 37,
+"name": "Camada 23",
+"vis": true,
+"op": 255,
+"blend": "NORMAL",
+"bbox": [
+628,
+314,
+1339,
+765
+]
+},
+{
+"i": 38,
+"name": "Camada 20",
+"vis": true,
+"op": 31,
+"blend": "NORMAL",
+"bbox": [
+1167,
+98,
+2371,
+819
+]
+}
+]
+}

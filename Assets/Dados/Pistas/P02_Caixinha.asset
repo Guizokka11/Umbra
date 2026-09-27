@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c5e7322b80c5544a828d016a660486, type: 3}
+  m_Name: P02_Caixinha
+  m_EditorClassIdentifier: Assembly-CSharp::ClueData
+  id: P02_Caixinha
+  title: Uma caixinha de madeira sobre a mesa
+  text: "Dentro, um papel dobrado em quatro:\n\n\"Se as luzes apagarem, fique perto
+    delas.\nEla n\xE3o entra onde tem luz.\"\n\nNo canto, um pequeno sol."
+  image: {fileID: 0}
+  origin: 0
+  arc: 1

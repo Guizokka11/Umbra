@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.Cinemachine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -8,6 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed  = 6f;
     public float gravity   = -20f;
     public float jumpForce = 8f;
+
+    [Header("Controle externo (usado por esconderijo, caixas, urso, pistas)")]
+    [HideInInspector] public bool  canMove = true;
+    [HideInInspector] public bool  canJump = true;
+    [HideInInspector] public bool  lockFacing = false;
+    [HideInInspector] public float speedMultiplier = 1f;
 
     [Header("Travamento de profundidade (opcional, para momentos cinemáticos)")]
     [Tooltip("Enquanto travado, o eixo Z ignora o input e desliza suavemente até depthLockZ.")]
@@ -34,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
     {
         float ix = Input.GetAxisRaw("Horizontal");
         float iz = Input.GetAxisRaw("Vertical");
-        isRunning = Input.GetKey(KeyCode.LeftShift);
+        if (!canMove) { ix = 0f; iz = 0f; }
+        isRunning = canMove && speedMultiplier >= 1f && Input.GetKey(KeyCode.LeftShift);
 
         Vector3 input = new Vector3(ix, 0f, iz);
         if (input.magnitude > 1f) input.Normalize();
@@ -43,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
         isMoving      = input.magnitude > 0.01f;
 
         // Flip do sprite baseado só no eixo X, mesmo se houver movimento em Z.
-        if (ix > 0.01f)       facingRight = true;
+        if (lockFacing) { }
+        else if (ix > 0.01f)  facingRight = true;
         else if (ix < -0.01f) facingRight = false;
 
         // Gravidade e pulo.
@@ -51,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalVelocity = -2f;
             isJumping = false;
-            if (Input.GetButtonDown("Jump"))
+            if (canMove && canJump && Input.GetButtonDown("Jump"))
             {
                 verticalVelocity = jumpForce;
                 isJumping = true;
@@ -62,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity += gravity * Time.deltaTime;
         }
 
-        float speed = isRunning ? runSpeed : walkSpeed;
+        float speed = (isRunning ? runSpeed : walkSpeed) * speedMultiplier;
         Vector3 vel = input * speed;
         vel.y = verticalVelocity;
 
@@ -92,5 +101,20 @@ public class PlayerMovement : MonoBehaviour
     public void UnlockDepth()
     {
         isDepthLocked = false;
+    }
+
+    /// <summary>
+    /// Move a Luma instantaneamente (checkpoint, esconderijo, cutscene).
+    /// </summary>
+    public void Teleport(Vector3 position)
+    {
+        if (cc == null) cc = GetComponent<CharacterController>();
+        Vector3 delta = position - transform.position;
+        cc.enabled = false;
+        transform.position = position;
+        cc.enabled = true;
+        verticalVelocity = 0f;
+        // Avisa o Cinemachine para a câmera que segue pular junto, sem arrastar pela tela.
+        CinemachineCore.OnTargetObjectWarped(transform, delta);
     }
 }
