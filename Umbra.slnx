@@ -12,6 +12,7 @@
   <Project Path="Unity.AI.Pbr.csproj" />
   <Project Path="Unity.AI.Generators.Sdk.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.AI.Toolkit.Accounts.csproj" />
   <Project Path="Unity.AI.ModelSelector.csproj" />
   <Project Path="Unity.AI.Animate.csproj" />
@@ -24,7 +25,6 @@
   <Project Path="Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.csproj" />
   <Project Path="Unity.AI.Tracing.csproj" />
   <Project Path="Unity.AI.Toolkit.GenerationObjectPicker.csproj" />
-  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.AI.Assistant.API.Editor.csproj" />
   <Project Path="Unity.AI.Generators.UI.AIDropdownIntegrations.csproj" />
   <Project Path="Unity.AI.Generators.Asset.csproj" />

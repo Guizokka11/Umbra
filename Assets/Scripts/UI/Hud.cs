@@ -225,6 +225,9 @@ public class Hud : MonoBehaviour
                     + (FearSystem.Instance != null ? "  medo: " + FearSystem.Instance.fear.ToString("F2") : "")
                     + (MedoDoEscuro.Instance != null && MedoDoEscuro.Instance.Ativo ? "  escuro: " + MedoDoEscuro.Instance.Intensidade.ToString("F2")
                         + (MedoDoEscuro.Instance.EmPanico ? " PÂNICO" : "") + "  velocidade: " + ps.Movement.speedMultiplier.ToString("F2") : "")
+                    + (ps.heldObject != null && ps.heldObject.GetComponent<Pushable>() != null
+                        ? "  último barulho do arrasto: " + ps.heldObject.GetComponent<Pushable>().UltimoBarulho.ToString("F1") + " m (há "
+                          + (Time.time - ps.heldObject.GetComponent<Pushable>().QuandoUltimoBarulho).ToString("F1") + " s)" : "")
                     + "  na luz: " + ps.IsInLight + perto);
             }
         }

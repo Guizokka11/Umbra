@@ -29,7 +29,7 @@ public class NoiseEmitter : MonoBehaviour
 
         if (sfx != null) sfx.Play();
         foreach (var c in CreatureAI.All) c.HearNoiseAt(transform.position, radius);
-        onEmit.Invoke();
+        onEmit?.Invoke();                  // criado em tempo de jogo (ex.: Pushable), o evento vem vazio
     }
 
     void OnTriggerEnter(Collider other)

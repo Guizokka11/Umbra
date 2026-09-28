@@ -179,7 +179,7 @@ public class DicasDeControle : MonoBehaviour
         KeyCode ek = pi != null ? pi.interactKey : KeyCode.E;
 
         if (st.isGrabbing)
-            Pedir("empurrar", "empurrar e puxar  ·  " + e + " de novo: soltar", new[] { "A", "D", "W", "S" }, ek);
+            Pedir("empurrar", "empurrar e puxar (toques curtos = sem barulho)  ·  " + e + " de novo: soltar", new[] { "A", "D", "W", "S" }, ek);
         else if (st.isHidden)
             Pedir("sair_esconderijo", "sair do esconderijo (espere ela ir embora)", new[] { e }, ek);
         else if (pi != null && pi.Current != null && st.IsFree)

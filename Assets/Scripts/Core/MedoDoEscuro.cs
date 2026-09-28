@@ -24,7 +24,7 @@ public class MedoDoEscuro : MonoBehaviour
     public float VeuExtra => Ativo && cfg != null ? Intensidade * cfg.veuExtra : 0f;
 
     MedoDoEscuroConfig global, cfg;
-    float noEscuro, proxSussurro, proxBarulho, ultimoChamado = -999f, lightFallOriginal = -1f;
+    float noEscuro, proxSussurro, proxBarulho, lightFallOriginal = -1f;
     bool mudouVelocidade;
     FearSystem medoDaCena;
     AudioSource loop, soltos, choro;
@@ -187,14 +187,8 @@ public class MedoDoEscuro : MonoBehaviour
         }
 
         // A Inspetora da ronda ouve do outro cômodo e vem (com o aviso de sempre).
-        var ronda = RondaDoAndar.Instance;
-        string cena = SceneManager.GetActiveScene().name;
-        if (cfg.chamaARonda && ronda != null && ronda.Ativa && ronda.FazParte(cena) && ronda.ComodoAtual != cena &&
-            Time.time - ultimoChamado > cfg.intervaloEntreChamados)
-        {
-            ultimoChamado = Time.time;
-            ronda.IrPara(cena);
-        }
+        if (cfg.chamaARonda && RondaDoAndar.Instance != null)
+            RondaDoAndar.Instance.ChamarPara(SceneManager.GetActiveScene().name, cfg.intervaloEntreChamados);
     }
 
     void SairDoPanico()

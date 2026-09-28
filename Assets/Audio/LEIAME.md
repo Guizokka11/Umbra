@@ -119,6 +119,18 @@ Captura (componente `SequenciaDeCaptura` na Inspetora de cada cena) > **Som Da C
 Mãos de sombra (mesma configuração, campo **Maos**): hoje são geradas pelo jogo (provisórias). Para a arte: PNG preto
 com transparência, ~512×680 px, pulso embaixo e dedos longos e finos para cima (2–3 variações).
 
+## 3d. Puzzles sob pressão — componente `PuzzleSobPressao` (ex.: "Fusível sob pressão" na caixa de luz da 09_LazyRoom)
+
+| Campo | Arquivo sugerido | Duração | Onde toca |
+|---|---|---|---|
+| Som Ao Comecar | `Efeitos/fusivel_encaixando.wav` | 0,5–1 s | o fusível entrando na caixa |
+| Passos (lista) | `Criaturas/passos_aproximando_01.wav` … `_04` | 0,4–0,7 s | passos se aproximando enquanto a luz tenta ligar (ficam mais altos e rápidos) |
+| Som Ao Falhar | `Efeitos/fusivel_caindo.wav` | 0,5 s | a Luma soltou: o fusível cai no chão |
+| Som Ao Concluir | `Efeitos/lampada_ligando_firme.wav` | 1 s | a luz firma (zumbido elétrico) |
+
+Móveis arrastados (`Pushable` > Drag Loop): o arrasto agora também faz barulho no jogo (atrai criaturas) — o som do
+arrasto deve crescer com a velocidade: `Efeitos/arrastar_movel_loop.wav` já toca com volume pela velocidade.
+
 ## 4. Sustos (`ScareFlash`) — campo **Stinger** de cada susto
 
 Todo susto tem: calma (ambiente abaixa 1–3 s) → stinger ALTO → respiração acelerada. Os stingers precisam ter

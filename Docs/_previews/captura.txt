@@ -1,4 +1,4 @@
-Luma (-6.37, 0.08, -2.29)  embaixo: Chao (em volta do buraco) @(-6.37, 0.00, -2.29)  segurando: False  alvo: -  medo: 0,89  escuro: 0,34  velocidade: 1,00  na luz: True
-  Frente_Invisivel (0.00, 3.00, -3.12) (48.51, 6.00, 0.50)
-  Chao (em volta do buraco) (-9.00, -0.25, -5.61) (30.51, 0.50, 16.82)
-  Luma (-6.37, 0.58, -2.29) (0.40, 1.00, 0.40)
+Luma (2.55, 0.05, -1.18)  embaixo: Chao @(2.55, 0.00, -1.18)  segurando: False  alvo: Estante 2 (empurrável)  medo: 0,12  escuro: 0,00  velocidade: 1,00  na luz: False
+  Chao (0.00, -0.25, -4.33) (29.99, 0.50, 12.98)
+  Estante 2 (empurrável) (1.63, 0.30, -1.24) (0.57, 0.60, 0.50)
+  Luma (2.55, 0.55, -1.18) (0.40, 1.00, 0.40)

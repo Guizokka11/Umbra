@@ -140,5 +140,21 @@ public class RondaDoAndar : MonoBehaviour
         OnTroca?.Invoke(de, cena);
     }
 
+    float ultimoChamado = -999f;
+
+    /// <summary>
+    /// Um barulho chamou a Inspetora: se a ronda está ativa e ela está em outro cômodo do andar, vem para "cena"
+    /// (com o aviso de sempre). No máximo uma vez a cada "intervaloMinimo" segundos. Devolve se ela vem.
+    /// Usado pelo pânico no escuro, por móveis arrastados com barulho e por puzzles sob pressão.
+    /// </summary>
+    public bool ChamarPara(string cena, float intervaloMinimo = 45f)
+    {
+        if (!Ativa || !FazParte(cena) || ComodoAtual == cena) return false;
+        if (Time.time - ultimoChamado < intervaloMinimo) return false;
+        ultimoChamado = Time.time;
+        IrPara(cena);
+        return true;
+    }
+
     static float Sorteio(Vector2 faixa) => UnityEngine.Random.Range(faixa.x, Mathf.Max(faixa.x, faixa.y));
 }

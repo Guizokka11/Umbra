@@ -24,6 +24,12 @@ public class ItemLock : Interactable
     [Tooltip("Chamado também ao voltar para a cena já resolvida (sem mensagem).")]
     public UnityEvent onAlreadyDone;
 
+    [Header("Sob pressão (opcional)")]
+    [Tooltip("Usar o item começa este puzzle e só resolve quando ele terminar; se falhar, o item volta e dá para tentar de novo.")]
+    public PuzzleSobPressao pressao;
+    [TextArea] [Tooltip("Mensagem ao começar (ex.: \"Colocou o fusível. Não solte...\").")]
+    public string mensagemAoComecar;
+
     string basePrompt;
     bool done;
 
@@ -44,7 +50,7 @@ public class ItemLock : Interactable
 
     bool HasItem => string.IsNullOrEmpty(requiredItem) || GameFlags.Has(requiredItem);
 
-    public override bool CanInteract(PlayerInteractor who) => base.CanInteract(who) && !done;
+    public override bool CanInteract(PlayerInteractor who) => base.CanInteract(who) && !done && (pressao == null || !pressao.Rodando);
 
     void Update()
     {
@@ -59,6 +65,20 @@ public class ItemLock : Interactable
             Hud.Toast(lockedMessage);
             return;
         }
+        if (pressao != null)
+        {
+            // Sob pressão: só resolve no fim; se falhar, nada foi gasto.
+            if (pressao.Rodando) return;
+            if (!string.IsNullOrEmpty(mensagemAoComecar)) Hud.Toast(mensagemAoComecar);
+            pressao.Comecar(Resolver, null);
+            return;
+        }
+        Resolver();
+    }
+
+    void Resolver()
+    {
+        if (done) return;
         done = true;
         if (!string.IsNullOrEmpty(requiredItem) && consumeItem)
         {
