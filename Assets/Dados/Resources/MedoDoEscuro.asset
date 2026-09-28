@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e326412f02abf34883b336b666009d7, type: 3}
+  m_Name: MedoDoEscuro
+  m_EditorClassIdentifier: Assembly-CSharp::MedoDoEscuroConfig
+  cenas:
+  - 01_Dormitorio1
+  - 02_Corredor1
+  - 03_Banheiro
+  - 06_Dormitorio2
+  - 08_Biblioteca
+  - 09_LazyRoom
+  - 10_LivingRoom
+  atraso: 4
+  tempoAteOMaximo: 10
+  alivioPorSegundo: 0.1
+  medoExtraPorSegundo: 0.06
+  quedaDoMedoNaLuz: 0.035
+  vinhetaExtra: 0.25
+  veuExtra: 0.12
+  maos: []
+  quantidadeDeMaos: 6
+  tamanhoDaMao: 0.5
+  quantoEntram: 0.55
+  opacidadeDasMaos: 0.9
+  sussurrosLoop: {fileID: 0}
+  sussurrosSoltos: []
+  volumeDosSussurros: 0.6
+  intervaloDosSoltos: {x: 3, y: 7}
+  medoDoPanico: 0.95
+  medoParaSairDoPanico: 0.8
+  velocidadeNoPanico: 0.6
+  raioDoBarulho: 9
+  intervaloDoBarulho: 2.5
+  choro: []
+  chamaARonda: 1
+  intervaloEntreChamados: 45

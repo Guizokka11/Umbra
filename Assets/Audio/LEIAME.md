@@ -108,6 +108,17 @@ O loop fica mais alto quando a criatura se move e some a ~14 m (campo *Alcance*)
 Captura (componente `SequenciaDeCaptura` na Inspetora de cada cena) > **Som Da Captura**: `Stingers/captura_inspetora.wav`,
 1–2 s, **alto** e seco (grito + galhos estalando). Vazio = um dos stingers gerais.
 
+## 3c. Escuro perigoso (Arco 1) — asset `Assets/Dados/Resources/MedoDoEscuro.asset`
+
+| Campo | Arquivo sugerido | Duração | Onde toca |
+|---|---|---|---|
+| Sussurros Loop | `Medo/sussurros_escuro_loop.wav` | 20–40 s, loop estéreo | sobe aos poucos quando a Luma fica no escuro (depois de 4 s). Vozes baixas, ininteligíveis, bem perto do ouvido |
+| Sussurros Soltos (lista) | `Medo/sussurro_01.wav` … `_06` | 1–2 s | frases soltas que vêm de um lado ou do outro, mais frequentes quanto mais tempo no escuro |
+| Choro (lista) | `Medo/luma_choro_01.wav` … `_04` | 1–2 s | no pânico: soluço/choro contido da Luma (é o "barulho" que atrai a Inspetora) |
+
+Mãos de sombra (mesma configuração, campo **Maos**): hoje são geradas pelo jogo (provisórias). Para a arte: PNG preto
+com transparência, ~512×680 px, pulso embaixo e dedos longos e finos para cima (2–3 variações).
+
 ## 4. Sustos (`ScareFlash`) — campo **Stinger** de cada susto
 
 Todo susto tem: calma (ambiente abaixa 1–3 s) → stinger ALTO → respiração acelerada. Os stingers precisam ter

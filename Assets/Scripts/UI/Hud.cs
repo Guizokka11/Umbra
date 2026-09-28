@@ -221,7 +221,11 @@ public class Hud : MonoBehaviour
                 var pi = ps.GetComponent<PlayerInteractor>();
                 string alvo = pi != null && pi.Current != null ? pi.Current.name : "-";
                 System.IO.File.WriteAllText("Docs/_previews/captura.txt", "Luma " + p.ToString("F2") + "  embaixo: " + under
-                    + "  segurando: " + ps.isGrabbing + "  alvo: " + alvo + perto);
+                    + "  segurando: " + ps.isGrabbing + "  alvo: " + alvo
+                    + (FearSystem.Instance != null ? "  medo: " + FearSystem.Instance.fear.ToString("F2") : "")
+                    + (MedoDoEscuro.Instance != null && MedoDoEscuro.Instance.Ativo ? "  escuro: " + MedoDoEscuro.Instance.Intensidade.ToString("F2")
+                        + (MedoDoEscuro.Instance.EmPanico ? " PÂNICO" : "") + "  velocidade: " + ps.Movement.speedMultiplier.ToString("F2") : "")
+                    + "  na luz: " + ps.IsInLight + perto);
             }
         }
 #endif

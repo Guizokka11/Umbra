@@ -66,7 +66,8 @@ public class DarknessOverlay : MonoBehaviour
             Add(ref n, st.transform.position + Vector3.up * 0.5f, lumaAura, lumaAuraStrength, tanV);
 
         float fear = FearSystem.Instance != null ? FearSystem.Instance.fear : 0f;
-        material.SetFloat("_Darkness", Mathf.Clamp01(darkness + fear * fearExtra));
+        float perigo = MedoDoEscuro.Instance != null ? MedoDoEscuro.Instance.VeuExtra : 0f;   // escuro perigoso: fecha mais
+        material.SetFloat("_Darkness", Mathf.Clamp01(darkness + fear * fearExtra + perigo));
         material.SetVectorArray("_Lights", lights);
         material.SetFloat("_LightCount", n);
         material.SetFloat("_Aspect", cam.aspect);

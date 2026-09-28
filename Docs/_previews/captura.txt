@@ -1,8 +1,4 @@
-Luma (4.39, 0.08, -1.27)  embaixo: Chao @(4.39, 0.00, -1.27)  segurando: False  alvo: Esconderijo: Dentro da cabine
-  Caixa_Privada (transparente) (1) (5.05, 0.48, -0.21) (0.39, 0.96, 0.65)
-  Caixa_Privada (transparente) (5.05, 0.25, -0.31) (0.39, 0.50, 0.84)
-  Divisoria_Divisoria cabine A (transparente) (1) (3.77, 1.28, -0.97) (0.79, 2.56, 0.20)
-  Divisoria_Divisoria cabine A (transparente) (3.48, 1.28, -0.38) (0.21, 2.56, 1.37)
-  Chao (0.00, -0.25, -4.11) (35.05, 0.50, 12.32)
-  Frente_Invisivel (0.00, 3.00, -2.30) (35.05, 6.00, 0.50)
-  Luma (4.39, 0.58, -1.27) (0.40, 1.00, 0.40)
+Luma (-6.37, 0.08, -2.29)  embaixo: Chao (em volta do buraco) @(-6.37, 0.00, -2.29)  segurando: False  alvo: -  medo: 0,89  escuro: 0,34  velocidade: 1,00  na luz: True
+  Frente_Invisivel (0.00, 3.00, -3.12) (48.51, 6.00, 0.50)
+  Chao (em volta do buraco) (-9.00, -0.25, -5.61) (30.51, 0.50, 16.82)
+  Luma (-6.37, 0.58, -2.29) (0.40, 1.00, 0.40)

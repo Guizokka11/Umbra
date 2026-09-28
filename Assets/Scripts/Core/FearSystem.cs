@@ -48,6 +48,7 @@ public class FearSystem : MonoBehaviour
     PlayerState state;
     Vignette vignette;
     float vinhetaExtra;                 // pulso de susto (some sozinho)
+    float vinhetaContinua;              // escuro perigoso (MedoDoEscuro): enquanto durar
     float medoMinimo, medoMinimoAte;    // depois de um susto: medo alto por alguns segundos
 
     /// <summary>Está no "depois" de um susto (medo segurado alto, respiração acelerada).</summary>
@@ -114,7 +115,7 @@ public class FearSystem : MonoBehaviour
     {
         if (vignette == null && volume != null && volume.profile != null) volume.profile.TryGet(out vignette);
         if (vignette != null)
-            vignette.intensity.Override(Mathf.Clamp01(Mathf.Lerp(vignetteCalm, vignettePanic, fear) + vinhetaExtra));
+            vignette.intensity.Override(Mathf.Clamp01(Mathf.Lerp(vignetteCalm, vignettePanic, fear) + vinhetaExtra + vinhetaContinua));
         vinhetaExtra = Mathf.MoveTowards(vinhetaExtra, 0f, Time.deltaTime * 0.6f);
 
         if (heartbeat != null)
@@ -128,6 +129,9 @@ public class FearSystem : MonoBehaviour
             breathing.pitch = Mathf.Lerp(0.95f, 1.3f, fear) + (Assustada ? 0.15f : 0f);   // acelera com o medo
         }
     }
+
+    /// <summary>Vinheta a mais enquanto algo durar (ex.: o escuro perigoso). 0 = nada.</summary>
+    public void DefinirVinhetaExtra(float quanto) => vinhetaContinua = Mathf.Max(0f, quanto);
 
     /// <summary>Susto: a vinheta fecha de repente e volta devagar.</summary>
     public void PulsoDeVinheta(float quanto) => vinhetaExtra = Mathf.Max(vinhetaExtra, quanto);
