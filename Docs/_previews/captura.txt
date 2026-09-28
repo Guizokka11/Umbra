@@ -1,4 +1,5 @@
-Luma (1.97, 0.08, -2.33)  embaixo: Chao (em volta do buraco) @(1.97, 0.00, -2.33)  segurando: False  alvo: Porta_Banheiro
-  Parede_2 (2.70, 3.00, -1.68) (6.50, 6.00, 0.60)
-  Frente_Invisivel (0.00, 3.00, -3.12) (48.51, 6.00, 0.50)
-  Chao (em volta do buraco) (-9.00, -0.25, -5.61) (30.51, 0.50, 16.82)
+Luma (1.24, 0.08, -1.09)  embaixo: Chao @(1.24, 0.00, -1.09)  segurando: False  alvo: Pista_P03_Espelho
+  Caixa_Camada 7 (na parede) (1.09, 0.56, -0.23) (0.81, 0.32, 0.45)
+  Caixa_Camada 7 Copiar (na parede) (2.03, 0.56, -0.23) (0.82, 0.34, 0.45)
+  Chao (0.00, -0.25, -4.11) (35.05, 0.50, 12.32)
+  Luma (1.24, 0.58, -1.09) (0.40, 1.00, 0.40)

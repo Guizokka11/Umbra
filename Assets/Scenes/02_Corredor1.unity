@@ -6112,18 +6112,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd6628ec9ffcf440bd36c5856ed845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScareFlash
+  tipo: 0
+  grande: 1
   target: {fileID: 672876933}
   seconds: 1.4
+  from: {fileID: 201891760}
+  to: {fileID: 1575122091}
   flickerLights:
   - {fileID: 452463089}
   - {fileID: 2114615446}
-  fear: 0.25
-  from: {fileID: 201891760}
-  to: {fileID: 1575122091}
-  subtitle: (alguma coisa passou pela escada...)
-  onceFlag: c1_susto
+  calma: {x: 1, y: 3}
   stinger: {fileID: 0}
+  volumeDoStinger: 1.3
   silenciarAmbiente: 1.5
+  tremor: 0.12
+  duracaoDoTremor: 0.35
+  vinheta: 0.35
+  fear: 0.25
+  medoDepois: 0.75
+  segundosDepois: 5
+  exigirCalma: 1
+  medoMaximoParaDisparar: 0.6
+  calmaMinima: 8
+  onceFlag: c1_susto
+  espelhoCentro: {fileID: 0}
+  espelhoTamanho: {x: 2.6, y: 1.1}
+  materialDoReflexo: {fileID: 0}
+  reflexoDaLuma: 1
+  luzPiscaDepois: 2
+  subtitle: 
 --- !u!65 &1332784641
 BoxCollider:
   m_ObjectHideFlags: 0

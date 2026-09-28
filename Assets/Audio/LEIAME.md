@@ -50,6 +50,7 @@ Selecione o prefab no Project e preencha no Inspector:
 | Passos da Luma > Azulejo > Passos Correndo | `Passos/passo_azulejo_corre_01.wav` … `_04` | 0,2–0,3 s | correndo no azulejo |
 | Aterrissar | `Passos/aterrissar_01.wav` | 0,3 s | Luma cai no chão depois de um pulo ou de descer de um móvel |
 | Stingers (lista) | `Stingers/stinger_01.wav` … `_05` | 1–3 s | sustos curtos gerais (sorteados quando o susto não tem som próprio) |
+| Arfar (lista) | `Medo/arfar_01.wav` … `_03` | 0,5–1 s | a Luma puxando o ar logo depois de um susto (voz de criança, curto) |
 | Stinger Inicio Perseguicao | `Stingers/stinger_perseguicao.wav` | 1–2 s | no instante em que uma criatura começa a perseguir |
 | Musica De Perseguicao | `Musica/musica_perseguicao_loop.wav` | 30–60 s, loop | entra com fade quando uma criatura persegue a Luma; sai devagar quando ela é perdida |
 | Batimento | `Medo/medo_batimento_loop.wav` | 1–2 s, loop (≈ 70 bpm) | coração da Luma. Volume e velocidade sobem com o medo (acima de 30%) |
@@ -99,6 +100,10 @@ Captura (componente `SequenciaDeCaptura` na Inspetora de cada cena) > **Som Da C
 1–2 s, **alto** e seco (grito + galhos estalando). Vazio = um dos stingers gerais.
 
 ## 4. Sustos (`ScareFlash`) — campo **Stinger** de cada susto
+
+Todo susto tem: calma (ambiente abaixa 1–3 s) → stinger ALTO → respiração acelerada. Os stingers precisam ter
+ataque imediato e ser bem mais altos que o ambiente. Susto **falso** (tipo Falso): só um barulho, sem aparição —
+ex.: `Efeitos/porta_batendo_longe.wav`, `Efeitos/objeto_caindo.wav` (0,5–1,5 s).
 
 Opcional: sem som próprio, o susto usa um dos stingers gerais do AudioManager.
 Exemplo: o susto da escada do Corredor 1 (`Susto_Escada`) → `Stingers/susto_escada_galhos.wav` (galhos raspando rápido, 1,5 s).

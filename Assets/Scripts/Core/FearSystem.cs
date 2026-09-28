@@ -47,6 +47,11 @@ public class FearSystem : MonoBehaviour
 
     PlayerState state;
     Vignette vignette;
+    float vinhetaExtra;                 // pulso de susto (some sozinho)
+    float medoMinimo, medoMinimoAte;    // depois de um susto: medo alto por alguns segundos
+
+    /// <summary>Está no "depois" de um susto (medo segurado alto, respiração acelerada).</summary>
+    public bool Assustada => Time.time < medoMinimoAte;
 
     void Awake()
     {
@@ -79,6 +84,7 @@ public class FearSystem : MonoBehaviour
         if (state.isHuggingBear) delta -= hugFall;
 
         fear = Mathf.Clamp01(fear + delta * dt);
+        if (Time.time < medoMinimoAte) fear = Mathf.Max(fear, medoMinimo);
 
         if (!InPanic && fear > 0.85f) { InPanic = true;  onPanicStart.Invoke(); }
         if (InPanic  && fear < 0.60f) { InPanic = false; onPanicEnd.Invoke(); }
@@ -108,7 +114,8 @@ public class FearSystem : MonoBehaviour
     {
         if (vignette == null && volume != null && volume.profile != null) volume.profile.TryGet(out vignette);
         if (vignette != null)
-            vignette.intensity.Override(Mathf.Lerp(vignetteCalm, vignettePanic, fear));
+            vignette.intensity.Override(Mathf.Clamp01(Mathf.Lerp(vignetteCalm, vignettePanic, fear) + vinhetaExtra));
+        vinhetaExtra = Mathf.MoveTowards(vinhetaExtra, 0f, Time.deltaTime * 0.6f);
 
         if (heartbeat != null)
         {
@@ -116,9 +123,23 @@ public class FearSystem : MonoBehaviour
             heartbeat.pitch  = Mathf.Lerp(0.9f, 1.4f, fear);
         }
         if (breathing != null)
+        {
             breathing.volume = Mathf.Lerp(0.1f, 0.8f, fear);
+            breathing.pitch = Mathf.Lerp(0.95f, 1.3f, fear) + (Assustada ? 0.15f : 0f);   // acelera com o medo
+        }
+    }
+
+    /// <summary>Susto: a vinheta fecha de repente e volta devagar.</summary>
+    public void PulsoDeVinheta(float quanto) => vinhetaExtra = Mathf.Max(vinhetaExtra, quanto);
+
+    /// <summary>Depois de um susto: o medo fica pelo menos em "minimo" por alguns segundos (respiração acelerada).</summary>
+    public void SegurarMedo(float minimo, float segundos)
+    {
+        medoMinimo = Mathf.Clamp01(minimo);
+        medoMinimoAte = Mathf.Max(medoMinimoAte, Time.time + segundos);
+        fear = Mathf.Max(fear, medoMinimo);
     }
 
     public void AddFear(float amount) => fear = Mathf.Clamp01(fear + amount);
-    public void ResetFear() { fear = 0f; InPanic = false; }
+    public void ResetFear() { fear = 0f; InPanic = false; medoMinimoAte = 0f; vinhetaExtra = 0f; }
 }

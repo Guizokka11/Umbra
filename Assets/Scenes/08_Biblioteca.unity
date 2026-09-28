@@ -253,18 +253,18 @@ Camera:
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 2
-  m_GateFitMode: 1
+  m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 47.634377
+  m_FocalLength: 29.86014
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
   m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 20.25}
+  m_SensorSize: {x: 21.946, y: 16.002}
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -273,10 +273,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 200
-  field of view: 24
+  far clip plane: 5000
+  field of view: 30.000002
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -300,8 +300,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40274798}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -11.253474}
+  m_LocalRotation: {x: 0.06975647, y: 0, z: 0, w: 0.9975641}
+  m_LocalPosition: {x: -5.8, y: 1.7249432, z: -9.279537}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -472,6 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180592602}
   - component: {fileID: 180592603}
+  - component: {fileID: 180592604}
   m_Layer: 0
   m_Name: Luz
   m_TagString: Untagged
@@ -560,6 +561,35 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &180592604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180592601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &187641964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1269,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 956301311
   m_fontColor: {r: 1, g: 1, b: 1, a: 0.22}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1252,7 +1282,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -2306,7 +2336,7 @@ MonoBehaviour:
     m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 0
+  m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 0}
@@ -2571,7 +2601,7 @@ MonoBehaviour:
     m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 0
+  m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 1388764061}
@@ -3844,6 +3874,8 @@ MonoBehaviour:
   isGrabbing: 0
   isReading: 0
   isDead: 0
+  heldObject: {fileID: 0}
+  isOnStairs: 0
 --- !u!114 &1388764063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3919,6 +3951,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c2b1d1b469a874a8c98e6c23e8ee4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpriteController
+  estadoSubir: Climb
+  estadoEmpurrar: Push
+  estadoPuxar: Pull
+  estadoSegurar: Grab
+  estadoEscondida: Hide
+  estadoPega: Caught
+  estadoAbraco: Hug
+  estadoEscada: Stairs
 --- !u!114 &1388764067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4770,14 +4810,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd6628ec9ffcf440bd36c5856ed845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScareFlash
+  tipo: 0
+  grande: 1
   target: {fileID: 661811944}
   seconds: 0.5
-  flickerLights: []
-  fear: 0.25
   from: {fileID: 1917962446}
   to: {fileID: 809018482}
-  subtitle: "(um livro cai sozinho, l\xE1 no fundo...)"
+  flickerLights: []
+  calma: {x: 1, y: 3}
+  stinger: {fileID: 0}
+  volumeDoStinger: 1.3
+  silenciarAmbiente: 1.5
+  tremor: 0.12
+  duracaoDoTremor: 0.35
+  vinheta: 0.35
+  fear: 0.25
+  medoDepois: 0.75
+  segundosDepois: 5
+  exigirCalma: 1
+  medoMaximoParaDisparar: 0.6
+  calmaMinima: 8
   onceFlag: bib_livro
+  espelhoCentro: {fileID: 0}
+  espelhoTamanho: {x: 2.6, y: 1.1}
+  materialDoReflexo: {fileID: 0}
+  reflexoDaLuma: 1
+  luzPiscaDepois: 2
+  subtitle: 
 --- !u!65 &1739280479
 BoxCollider:
   m_ObjectHideFlags: 0

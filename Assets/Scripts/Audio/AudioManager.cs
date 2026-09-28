@@ -57,6 +57,8 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] public float volumeStinger = 0.9f;
     [Tooltip("Tocado quando uma criatura começa a perseguir (opcional).")]
     public AudioClip stingerInicioPerseguicao;
+    [Tooltip("A Luma puxando o ar logo depois de um susto (sorteado).")]
+    public AudioClip[] arfar;
 
     [Header("Perseguição")]
     public AudioClip musicaDePerseguicao;
@@ -239,12 +241,23 @@ public class AudioManager : MonoBehaviour
 
     // ------------------------------------------------------------------ stingers
 
-    /// <summary>Toca um susto curto. Sem som = sorteia um dos stingers gerais. silenciar > 0: o ambiente some junto.</summary>
-    public void TocarStinger(AudioClip som = null, float silenciar = 0f)
+    /// <summary>
+    /// Toca um susto curto. Sem som = sorteia um dos stingers gerais. silenciar > 0: o ambiente some junto.
+    /// volume: multiplica o volume dos stingers (1 = normal; sustos grandes usam mais).
+    /// </summary>
+    public void TocarStinger(AudioClip som = null, float silenciar = 0f, float volume = 1f)
     {
         if (som == null && stingers != null && stingers.Length > 0) som = stingers[Random.Range(0, stingers.Length)];
         if (silenciar > 0f) Silencio(silenciar);
-        if (som != null) stinger.PlayOneShot(som, volumeStinger);
+        if (som != null) stinger.PlayOneShot(som, volumeStinger * volume);
+    }
+
+    /// <summary>A Luma puxa o ar (depois de um susto).</summary>
+    public void Arfar()
+    {
+        if (arfar == null || arfar.Length == 0) return;
+        var c = arfar[Random.Range(0, arfar.Length)];
+        if (c != null) passo.PlayOneShot(c, 0.9f);
     }
 
     // ------------------------------------------------------------------ perseguição

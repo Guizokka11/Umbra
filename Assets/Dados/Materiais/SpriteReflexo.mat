@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Escuridao_Veu
-  m_Shader: {fileID: 4800000, guid: c633646a28f0e934c95d81147facc914, type: 3}
+  m_Name: SpriteReflexo
+  m_Shader: {fileID: 4800000, guid: 1930d6fbd40ccd1489f67e4e283ccbf2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,12 +22,15 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _Darkness: 0.8349057
-    - _Soft: 0.65
+    m_Floats: []
     m_Colors:
-    - _Color: {r: 0.015, g: 0.01, b: 0.025, a: 1}
+    - _Color: {r: 0.75, g: 0.78, b: 0.85, a: 0.8}
+    - _Espelho: {r: -1, g: 1, b: 0, a: 2}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -5286,17 +5286,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd6628ec9ffcf440bd36c5856ed845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScareFlash
+  tipo: 2
+  grande: 1
   target: {fileID: 1459300745}
   seconds: 0.6
-  flickerLights:
-  - {fileID: 1062226570}
-  fear: 0.25
   from: {fileID: 0}
   to: {fileID: 0}
-  subtitle: 
-  onceFlag: banheiro_espelho
+  flickerLights:
+  - {fileID: 1062226570}
+  calma: {x: 0.8, y: 1.6}
   stinger: {fileID: 0}
+  volumeDoStinger: 1.3
   silenciarAmbiente: 1.5
+  tremor: 0.12
+  duracaoDoTremor: 0.35
+  vinheta: 0.35
+  fear: 0.25
+  medoDepois: 0.75
+  segundosDepois: 5
+  exigirCalma: 1
+  medoMaximoParaDisparar: 0.6
+  calmaMinima: 8
+  onceFlag: banheiro_espelho
+  espelhoCentro: {fileID: 1587979585}
+  espelhoTamanho: {x: 2.6978, y: 0.6825}
+  materialDoReflexo: {fileID: 2100000, guid: d7a482edc60af004fb49f977338c2ca1, type: 2}
+  reflexoDaLuma: 1
+  luzPiscaDepois: 2
+  subtitle: 
 --- !u!65 &1575205586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5316,8 +5333,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 3, z: 6}
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Size: {x: 7.6977997, y: 3, z: 6}
+  m_Center: {x: 0.4714526, y: 1.5, z: 0}
 --- !u!4 &1575205587
 Transform:
   m_ObjectHideFlags: 0
@@ -5330,8 +5347,40 @@ Transform:
   m_LocalPosition: {x: 1.5660468, y: 0, z: -1.0925272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1587979585}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1587979584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1587979585}
+  m_Layer: 0
+  m_Name: Espelho (vidro)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1587979585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587979584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4714526, y: 1.3184499, z: 1.0425265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1575205587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1644526847
 GameObject:
