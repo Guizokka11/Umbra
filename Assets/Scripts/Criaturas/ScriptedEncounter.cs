@@ -19,11 +19,16 @@ public class ScriptedEncounter : MonoBehaviour
     [Tooltip("Onde a Luma volta se for pega durante o encontro.")]
     public Transform respawnPoint;
     [TextArea] public string startSubtitle;
+    [Tooltip("Opcional: em vez de patrulhar por \"duration\", a criatura faz esta busca (checa os esconderijos um por um).")]
+    public BuscaDaCriatura busca;
 
     public UnityEvent onBegin;
     public UnityEvent onEnd;
 
     bool running;
+
+    /// <summary>O encontro está acontecendo agora.</summary>
+    public bool Rodando => running;
     Coroutine co;
 
     void Start()
@@ -45,6 +50,7 @@ public class ScriptedEncounter : MonoBehaviour
     {
         if (!running) return;
         if (co != null) StopCoroutine(co);
+        if (busca != null) busca.Parar();
         co = StartCoroutine(Run());
     }
 
@@ -59,12 +65,20 @@ public class ScriptedEncounter : MonoBehaviour
         {
             creature.gameObject.SetActive(true);
             creature.ResetCreature();
-            creature.SetPatrol();
+            if (busca == null) creature.SetPatrol();
         }
 
-        yield return new WaitForSeconds(duration);
+        if (busca != null && creature != null)
+        {
+            busca.Iniciar(creature);
+            while (!busca.Terminou) yield return null;
+        }
+        else yield return new WaitForSeconds(duration);
         // Só vai embora quando não estiver perseguindo.
         while (creature != null && creature.State == CreatureState.Chase) yield return null;
+        // A perseguição acabou porque ela PEGOU a Luma: não termina o encontro; o respawn chama Restart e ele recomeça.
+        var luma = PlayerState.Instance;
+        if (luma != null && luma.isDead) yield break;
 
         if (creature != null) creature.gameObject.SetActive(false);
         if (lightsOff != null) foreach (var l in lightsOff) if (l != null) l.SetOn(true);

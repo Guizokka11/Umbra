@@ -3677,6 +3677,131 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 17.525002, y: 4, z: 4}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!1 &1068221622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1068221624}
+  - component: {fileID: 1068221623}
+  m_Layer: 0
+  m_Name: Busca (chuveiros e cabines)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1068221623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068221622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d59f497c692e94a9deddc8ed6ee03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuscaDaCriatura
+  criatura: {fileID: 420487082}
+  entrada: {fileID: 1216409583}
+  saida: {fileID: 18933305}
+  pontos:
+  - nome: Chuveiro 2 (cortina)
+    onde: {fileID: 2106996638}
+    esconderijo: {fileID: 1546746908}
+    balancar: {fileID: 369926347}
+    somAoAbrir: {fileID: 0}
+  - nome: Chuveiro 1
+    onde: {fileID: 1392841734}
+    esconderijo: {fileID: 0}
+    balancar: {fileID: 86721883069066162}
+    somAoAbrir: {fileID: 0}
+  - nome: Cabine 1
+    onde: {fileID: 1070021413}
+    esconderijo: {fileID: 335326488}
+    balancar: {fileID: 4595205400948880482}
+    somAoAbrir: {fileID: 0}
+  - nome: Cabine 2
+    onde: {fileID: 1550046107}
+    esconderijo: {fileID: 0}
+    balancar: {fileID: 11024468}
+    somAoAbrir: {fileID: 0}
+  farejarNaEntrada: 2.5
+  tempoEmCada: {x: 2, y: 3}
+  tempoNaFrenteDaLuma: 4
+  medoNaFrente: 0.35
+  farejar: {fileID: 0}
+  respirarFundo: {fileID: 0}
+  pegaQuemSai: 1
+  onComecar:
+    m_PersistentCalls:
+      m_Calls: []
+  onChecarLugar:
+    m_PersistentCalls:
+      m_Calls: []
+  onNaFrenteDaLuma:
+    m_PersistentCalls:
+      m_Calls: []
+  onPegou:
+    m_PersistentCalls:
+      m_Calls: []
+  onTerminar:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1068221624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068221622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2106996638}
+  - {fileID: 1392841734}
+  - {fileID: 1070021413}
+  - {fileID: 1550046107}
+  m_Father: {fileID: 1125068908}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1070021412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070021413}
+  m_Layer: 0
+  m_Name: 'Busca: Cabine 1'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1070021413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070021412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.90669, y: 0, z: -1.0100243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068221624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1118242077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3913,7 @@ MonoBehaviour:
   doneFlag: banheiro_encontro
   respawnPoint: {fileID: 1751852811}
   startSubtitle: (a luz apaga... alguma coisa se arrasta pelo corredor)
+  busca: {fileID: 1068221623}
   onBegin:
     m_PersistentCalls:
       m_Calls:
@@ -3830,7 +3956,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1068221624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136803951
@@ -4587,6 +4714,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38675585, y: 0.49915993, z: 0.84499145}
   m_Center: {x: 0, y: -0.2996016, z: -0.022495732}
+--- !u!1 &1392841733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392841734}
+  m_Layer: 0
+  m_Name: 'Busca: Chuveiro 1'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1392841734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392841733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.0044813, y: 0, z: -1.0100243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068221624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401528450
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,6 +5277,37 @@ Transform:
   m_Children:
   - {fileID: 10977473}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1550046106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550046107}
+  m_Layer: 0
+  m_Name: 'Busca: Cabine 2'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1550046107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550046106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.6365323, y: 0, z: -1.0100243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068221624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566370403
 GameObject:
@@ -7004,6 +7193,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 80119930}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2106996637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106996638}
+  m_Layer: 0
+  m_Name: 'Busca: Chuveiro 2 (cortina)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106996638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106996637}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.1605592, y: 0, z: -1.0100243}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068221624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2144845541
 GameObject:

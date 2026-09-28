@@ -66,7 +66,8 @@ public class CreatureAI : MonoBehaviour
     int   wpIndex;
     float waitTimer, stateTimer, noticeTimer, lastSeenTime = -99f;
     bool  sawHiding;
-    float farejarPor = -1f;            // > 0: a próxima procura é uma farejada deste tamanho (Farejar)
+    float farejarPor = -1f;
+    float semPerderAte;                // PerseguirSemPerder: sabe onde a Luma está mesmo sem vê-la            // > 0: a próxima procura é uma farejada deste tamanho (Farejar)
     float bloqueadaPor;                // patrulha: tempo com o caminho bloqueado pela luz
 
     /// <summary>Parada farejando (Farejar) neste momento.</summary>
@@ -100,7 +101,7 @@ public class CreatureAI : MonoBehaviour
         if (player == null) { player = PlayerState.Instance; if (player == null) return; }
         if (player.isDead) { Stop(); return; }
 
-        bool sees = CanSeePlayer();
+        bool sees = CanSeePlayer() || (Time.time < semPerderAte && !player.isHidden);
         if (sees) { lastSeenTime = Time.time; lastKnownPos = player.transform.position; }
 
         // Percebe a Luma depois de um pequeno tempo de exposição.
@@ -286,6 +287,7 @@ public class CreatureAI : MonoBehaviour
         else transform.position = startPos;
         wpIndex = 0;
         lastSeenTime = -99f;
+        semPerderAte = 0f;
         SetState(startIdle || waypoints == null || waypoints.Length == 0 ? CreatureState.Idle : CreatureState.Patrol);
     }
 
@@ -320,6 +322,16 @@ public class CreatureAI : MonoBehaviour
         lastKnownPos = ponto;
         SetState(CreatureState.Investigate);
         farejarPor = Mathf.Max(0.5f, segundos);
+    }
+
+    /// <summary>
+    /// Persegue sabendo onde a Luma está (mesmo atrás de uma parede) por alguns segundos. Se ela se esconder
+    /// nesse tempo, conta como "viu entrar" e a criatura a puxa para fora.
+    /// </summary>
+    public void PerseguirSemPerder(float segundos)
+    {
+        semPerderAte = Time.time + segundos;
+        if (State != CreatureState.Chase) StartChase();
     }
 
     /// <summary>Coloca a criatura num lugar e faz dele o ponto de volta (ResetCreature).</summary>

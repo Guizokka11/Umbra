@@ -96,6 +96,15 @@ O loop fica mais alto quando a criatura se move e some a ~14 m (campo *Alcance*)
 | Porta Rangendo | `Efeitos/porta_rangendo_lenta.wav` | 1,5–2,5 s | a porta abrindo devagar pouco antes de ela entrar (e fechando quando sai) |
 | Farejar | `Criaturas/inspetora_farejar.wav` | 2–4 s | ela parada na frente de um esconderijo, farejando. Úmido, perto, lento |
 
+### Busca do banheiro (objeto "Busca (chuveiros e cabines)", componente BuscaDaCriatura, no 03_Banheiro)
+
+| Campo | Arquivo sugerido | Duração | Onde toca |
+|---|---|---|---|
+| Farejar | `Criaturas/inspetora_farejar_entrada.wav` | 2–3 s | ela entrando no banheiro, farejando o ar |
+| Respirar Fundo | `Criaturas/inspetora_respira_fundo.wav` | 2–4 s | parada na frente do esconderijo onde a Luma está (bem perto, lento) |
+| Pontos > Chuveiro 1 e 2 > Som Ao Abrir | `Efeitos/cortina_chuveiro_puxada.wav` | 1 s | ela abrindo a cortina de cada chuveiro |
+| Pontos > Cabine 1 e 2 > Som Ao Abrir | `Efeitos/porta_cabine_abrindo.wav` | 1 s | ela abrindo a porta de cada cabine |
+
 Captura (componente `SequenciaDeCaptura` na Inspetora de cada cena) > **Som Da Captura**: `Stingers/captura_inspetora.wav`,
 1–2 s, **alto** e seco (grito + galhos estalando). Vazio = um dos stingers gerais.
 
