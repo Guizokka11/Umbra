@@ -106,23 +106,31 @@ public class Hud : MonoBehaviour
 #endif
         });
 
-        // Opções: volume, brilho, dicas
+        // Opções: volumes (geral + grupos do AudioMixer), brilho, dicas
         paginaOpcoes = Pagina("Opcoes");
-        Text(paginaOpcoes.transform, "Titulo", 64, new Vector2(0.5f, 0.5f), new Vector2(0, 290), new Vector2(800, 100)).text = "Opções";
-        Slider(paginaOpcoes.transform, "Volume", new Vector2(0, 150), 0f, 10f, Mathf.Round(Opcoes.VolumeGeral * 10f),
+        Text(paginaOpcoes.transform, "Titulo", 64, new Vector2(0.5f, 0.5f), new Vector2(0, 390), new Vector2(800, 100)).text = "Opções";
+        Slider(paginaOpcoes.transform, "Volume geral", new Vector2(0, 290), 0f, 10f, Mathf.Round(Opcoes.VolumeGeral * 10f),
                v => Opcoes.VolumeGeral = v / 10f, v => Mathf.RoundToInt(v * 10f) + "%");
-        Slider(paginaOpcoes.transform, "Brilho", new Vector2(0, 60), -10f, 10f, Mathf.Round(Opcoes.Brilho * 10f),
+        float y = 220f;
+        foreach (var grupo in AudioManager.Grupos)
+        {
+            string g = grupo;
+            Slider(paginaOpcoes.transform, g, new Vector2(0, y), 0f, 10f, Mathf.Round(Opcoes.VolumeDoGrupo(g) * 10f),
+                   v => Opcoes.DefinirVolumeDoGrupo(g, v / 10f), v => Mathf.RoundToInt(v * 10f) + "%");
+            y -= 70f;
+        }
+        Slider(paginaOpcoes.transform, "Brilho", new Vector2(0, y - 20f), -10f, 10f, Mathf.Round(Opcoes.Brilho * 10f),
                v => Opcoes.Brilho = v / 10f, v => v == 0f ? "padrão" : (v > 0f ? "+" : "") + Mathf.RoundToInt(v));
-        textoDicas = Button(paginaOpcoes.transform, "Dicas de controle", new Vector2(0, -40), () =>
+        textoDicas = Button(paginaOpcoes.transform, "Dicas de controle", new Vector2(0, y - 115f), () =>
         {
             Opcoes.DicasDeControle = !Opcoes.DicasDeControle;
             AtualizarTextoDicas();
         });
         AtualizarTextoDicas();
-        var nota = Text(paginaOpcoes.transform, "Nota", 24, new Vector2(0.5f, 0.5f), new Vector2(0, -110), new Vector2(1000, 40));
+        var nota = Text(paginaOpcoes.transform, "Nota", 24, new Vector2(0.5f, 0.5f), new Vector2(0, y - 180f), new Vector2(1000, 40));
         nota.color = new Color(1f, 1f, 1f, 0.45f);
         nota.text = "Brilho ideal: a Luma sempre visível, mas o escuro ainda escuro.";
-        Button(paginaOpcoes.transform, "Voltar", new Vector2(0, -200), () => MostrarPagina(paginaPrincipal));
+        Button(paginaOpcoes.transform, "Voltar", new Vector2(0, y - 265f), () => MostrarPagina(paginaPrincipal));
 
         // Controles
         paginaControles = Pagina("Controles");

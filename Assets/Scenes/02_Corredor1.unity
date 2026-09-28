@@ -3454,6 +3454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 767909324}
   - component: {fileID: 767909325}
+  - component: {fileID: 767909326}
   m_Layer: 0
   m_Name: Inspetora (perseguindo)
   m_TagString: Untagged
@@ -3501,6 +3502,7 @@ MonoBehaviour:
   maxAdvance: 6
   maxRetreat: 4
   chaseDelay: 1.3
+  desisteNaLuz: 3
   catchPadding: 0.15
   wobbleParts:
   - {fileID: 163135578}
@@ -3510,9 +3512,30 @@ MonoBehaviour:
   onStartChase:
     m_PersistentCalls:
       m_Calls: []
+  onLosePlayer:
+    m_PersistentCalls:
+      m_Calls: []
   onCatch:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &767909326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767909323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05e084bb4a1ac34595a9113b82b742a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SomDaCriatura
+  loopPresenca: {fileID: 0}
+  volumeParada: 0.25
+  volumeAndando: 0.7
+  aoPerseguir: {fileID: 0}
+  volumeAoPerseguir: 1
+  alcance: 14
 --- !u!1 &804676896
 GameObject:
   m_ObjectHideFlags: 0
@@ -5665,6 +5688,8 @@ MonoBehaviour:
   to: {fileID: 1575122091}
   subtitle: (alguma coisa passou pela escada...)
   onceFlag: c1_susto
+  stinger: {fileID: 0}
+  silenciarAmbiente: 1.5
 --- !u!65 &1332784641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7800,6 +7825,58 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8713136, y: 4.248805, z: 4.040367}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1924346062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1924346064}
+  - component: {fileID: 1924346063}
+  m_Layer: 0
+  m_Name: "Som: ambiente do c\xF4modo"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1924346063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924346062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24368966f7eb954b9a139cca6c61d37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmbienteDoComodo
+  loopGrave: {fileID: 0}
+  volumeLoop: 0.5
+  rangidos: []
+  volumeRangidos: {x: 0.25, y: 0.6}
+  intervaloRangidos: {x: 8, y: 20}
+  espalhamento: 0.8
+  superficiePadrao: 0
+  musicaDePerseguicao: {fileID: 0}
+--- !u!4 &1924346064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924346062}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1929952898
 GameObject:
   m_ObjectHideFlags: 0
@@ -11088,3 +11165,4 @@ SceneRoots:
   - {fileID: 1677259387}
   - {fileID: 1430239381}
   - {fileID: 1018712700}
+  - {fileID: 1924346064}

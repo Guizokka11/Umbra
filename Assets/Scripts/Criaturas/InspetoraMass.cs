@@ -35,6 +35,8 @@ public class InspetoraMass : MonoBehaviour
     public float maxRetreat = 4f;
     [Tooltip("Espera antes de começar a perseguir (dá tempo de correr).")]
     public float chaseDelay = 0.8f;
+    [Tooltip("Perseguindo: se a Luma fica na luz (ou a frente dela iluminada) por estes segundos, ela desiste e volta a espreitar. 0 = nunca desiste.")]
+    public float desisteNaLuz = 3f;
 
     [Header("Captura")]
     public float catchPadding = 0.15f;
@@ -44,11 +46,16 @@ public class InspetoraMass : MonoBehaviour
     public float wobbleAmount = 0.04f;
 
     public UnityEvent onStartChase;
+    [Tooltip("Desistiu da perseguição (luz). A música de perseguição sai.")]
+    public UnityEvent onLosePlayer;
     public UnityEvent onCatch;
+
+    public static readonly System.Collections.Generic.List<InspetoraMass> Todas = new System.Collections.Generic.List<InspetoraMass>();
+    public bool EstaPerseguindo => mode == Mode.Perseguir && isActiveAndEnabled;
 
     float homeX, startX;
     Mode startMode;
-    float chaseTimer;
+    float chaseTimer, naLuz;
     Vector3[] baseScales;
 
     public float FrontX => front != null ? front.position.x : transform.position.x;
@@ -64,6 +71,13 @@ public class InspetoraMass : MonoBehaviour
         }
     }
 
+    void OnEnable() { Todas.Add(this); }
+    void OnDisable()
+    {
+        Todas.Remove(this);
+        if (AudioManager.Instance != null) AudioManager.Instance.PerseguicaoAcabou(this);
+    }
+
     void Start()
     {
         if (GameManager.Instance != null) GameManager.Instance.onRespawn.AddListener(ResetMass);
@@ -74,16 +88,26 @@ public class InspetoraMass : MonoBehaviour
         if (mode == Mode.Perseguir) return;
         mode = Mode.Perseguir;
         chaseTimer = 0f;
+        naLuz = 0f;
+        if (AudioManager.Instance != null) AudioManager.Instance.PerseguicaoComecou(this);
         onStartChase?.Invoke();
     }
 
-    public void Sleep() => mode = Mode.Dormir;
-    public void Lurk()  => mode = Mode.Espreitar;
+    public void Sleep() { FimDaPerseguicao(); mode = Mode.Dormir; }
+    public void Lurk()  { FimDaPerseguicao(); mode = Mode.Espreitar; }
+
+    /// <summary>Saiu do modo Perseguir (desistiu, dormiu, voltou ao ninho): para a música de perseguição.</summary>
+    void FimDaPerseguicao()
+    {
+        if (mode == Mode.Perseguir && AudioManager.Instance != null) AudioManager.Instance.PerseguicaoAcabou(this);
+    }
 
     public void ResetMass()
     {
         var p = transform.position; p.x = startX; transform.position = p;
+        FimDaPerseguicao();
         mode = startMode;
+        if (mode == Mode.Perseguir && AudioManager.Instance != null) AudioManager.Instance.PerseguicaoComecou(this);
         chaseTimer = 0f;
     }
 
@@ -104,6 +128,13 @@ public class InspetoraMass : MonoBehaviour
         {
             chaseTimer += Time.deltaTime;
             if (chaseTimer >= chaseDelay) move = frontLit ? -retreatSpeed * 0.3f : chaseSpeed;
+            // A luz a vence: com a Luma protegida por tempo suficiente, ela perde a Luma e volta a espreitar.
+            naLuz = frontLit || st.IsInLight ? naLuz + Time.deltaTime : 0f;
+            if (desisteNaLuz > 0f && naLuz >= desisteNaLuz)
+            {
+                Lurk();
+                onLosePlayer?.Invoke();
+            }
         }
         else
         {

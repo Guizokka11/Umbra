@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Opções do jogador (menu de pausa > Opções), salvas em PlayerPrefs:
-///  - Volume geral (AudioListener.volume).
+///  - Volume geral (AudioListener.volume) e de cada grupo do AudioMixer (Ambiente, Efeitos, Música, Criaturas).
 ///  - Brilho: soma à exposição (Post Exposure) que cada cena já tem no Global Volume.
 ///  - Dicas de controle ligadas/desligadas (DicasDeControle).
 /// Aplicado sozinho ao abrir o jogo e a cada cena carregada.
@@ -37,6 +37,16 @@ public static class Opcoes
         set { brilho = Mathf.Clamp(value, -1f, 1f); PlayerPrefs.SetFloat(KeyBrilho, brilho); PlayerPrefs.Save(); AplicarBrilho(); }
     }
 
+    /// <summary>Volume de um grupo do mixer (AudioManager.Grupos), 0 a 1.</summary>
+    public static float VolumeDoGrupo(string grupo) => PlayerPrefs.GetFloat("umbra_vol_" + grupo, 1f);
+
+    public static void DefinirVolumeDoGrupo(string grupo, float v)
+    {
+        PlayerPrefs.SetFloat("umbra_vol_" + grupo, Mathf.Clamp01(v));
+        PlayerPrefs.Save();
+        if (AudioManager.Instance != null) AudioManager.Instance.AplicarVolumes();
+    }
+
     public static bool DicasDeControle
     {
         get { if (dicas < 0) dicas = PlayerPrefs.GetInt(KeyDicas, 1); return dicas == 1; }
@@ -52,7 +62,11 @@ public static class Opcoes
 
     public static void AplicarTudo() { AplicarVolume(); AplicarBrilho(); }
 
-    static void AplicarVolume() => AudioListener.volume = VolumeGeral;
+    static void AplicarVolume()
+    {
+        AudioListener.volume = VolumeGeral;
+        if (AudioManager.Instance != null) AudioManager.Instance.AplicarVolumes();
+    }
 
     static void AplicarBrilho()
     {

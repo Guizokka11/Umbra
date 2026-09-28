@@ -18,6 +18,12 @@ public class ScareFlash : MonoBehaviour
     [TextArea] public string subtitle;
     public string onceFlag;
 
+    [Header("Som")]
+    [Tooltip("Stinger deste susto. Vazio = o AudioManager sorteia um dos stingers gerais.")]
+    public AudioClip stinger;
+    [Tooltip("O ambiente some junto com o susto por este tempo (0 = não mexe no ambiente).")]
+    public float silenciarAmbiente = 1.5f;
+
     bool fired;
 
     void Reset() { GetComponent<Collider>().isTrigger = true; }
@@ -35,6 +41,7 @@ public class ScareFlash : MonoBehaviour
     IEnumerator Run()
     {
         if (FearSystem.Instance != null) FearSystem.Instance.AddFear(fear);
+        if (AudioManager.Instance != null) AudioManager.Instance.TocarStinger(stinger, silenciarAmbiente);
         if (!string.IsNullOrEmpty(subtitle)) Hud.Subtitle(subtitle, 2.5f);
         if (flickerLights != null) foreach (var l in flickerLights) if (l != null) l.SetOn(false);
         yield return new WaitForSeconds(0.15f);

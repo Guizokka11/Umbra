@@ -76,7 +76,11 @@ public class CreatureAI : MonoBehaviour
     }
 
     void OnEnable()  { All.Add(this); Active.Add(this); }
-    void OnDisable() { All.Remove(this); Active.Remove(this); }
+    void OnDisable()
+    {
+        All.Remove(this); Active.Remove(this);
+        if (AudioManager.Instance != null) AudioManager.Instance.PerseguicaoAcabou(this);
+    }
 
     void Start()
     {
@@ -239,6 +243,12 @@ public class CreatureAI : MonoBehaviour
 
     void SetState(CreatureState s)
     {
+        // Música de perseguição: entra quando começa a perseguir, sai quando desiste/pega/volta ao início.
+        if (AudioManager.Instance != null && (s == CreatureState.Chase) != (State == CreatureState.Chase))
+        {
+            if (s == CreatureState.Chase) AudioManager.Instance.PerseguicaoComecou(this);
+            else AudioManager.Instance.PerseguicaoAcabou(this);
+        }
         State = s;
         stateTimer = 0f;
         noticeTimer = 0f;
