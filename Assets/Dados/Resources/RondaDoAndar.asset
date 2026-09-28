@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28fb14f39aa788848b36b8530d962f2a, type: 3}
+  m_Name: RondaDoAndar
+  m_EditorClassIdentifier: Assembly-CSharp::RondaDoAndarConfig
+  comodos:
+  - cena: 02_Corredor1
+    vizinhos:
+    - 03_Banheiro
+    - 06_Dormitorio2
+  - cena: 03_Banheiro
+    vizinhos:
+    - 02_Corredor1
+  - cena: 06_Dormitorio2
+    vizinhos:
+    - 02_Corredor1
+  comodoInicial: 06_Dormitorio2
+  flagDeInicio: banheiro_encontro
+  flagsQuePausam:
+  - fuga_inspetora
+  intervaloDeTroca: {x: 40, y: 90}
+  tempoDeAviso: {x: 5, y: 8}
+  sombraAntes: 2.5
+  duracaoDaSombra: 1.8
+  portaAntes: 1.2
+  raioDoFaro: 2.6
+  tempoFarejando: {x: 3, y: 5}
+  chanceEsconderijoVazio: 0.25
+  medoAoFarejar: 0.2
+  passos: []
+  galhosRaspando: {fileID: 0}
+  portaRangendo: {fileID: 0}
+  farejar: {fileID: 0}
+  volumeNoVizinho: 0.45
+  alcanceDoSomVizinho: 14

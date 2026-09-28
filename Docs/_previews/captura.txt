@@ -1,4 +1,4 @@
-Luma (-4.67, 0.08, -2.29)  embaixo: Chao (em volta do buraco) @(-4.67, 0.00, -2.29)  segurando: False  alvo: -
+Luma (1.97, 0.08, -2.33)  embaixo: Chao (em volta do buraco) @(1.97, 0.00, -2.33)  segurando: False  alvo: Porta_Banheiro
+  Parede_2 (2.70, 3.00, -1.68) (6.50, 6.00, 0.60)
   Frente_Invisivel (0.00, 3.00, -3.12) (48.51, 6.00, 0.50)
   Chao (em volta do buraco) (-9.00, -0.25, -5.61) (30.51, 0.50, 16.82)
-  Luma (-4.67, 0.58, -2.29) (0.40, 1.00, 0.40)

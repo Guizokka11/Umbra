@@ -1820,6 +1820,8 @@ GameObject:
   m_Component:
   - component: {fileID: 571916033}
   - component: {fileID: 571916032}
+  - component: {fileID: 571916035}
+  - component: {fileID: 571916034}
   m_Layer: 0
   m_Name: Inspetora (ronda)
   m_TagString: Untagged
@@ -1887,6 +1889,42 @@ Transform:
   - {fileID: 234913546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571916034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571916031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05e084bb4a1ac34595a9113b82b742a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SomDaCriatura
+  loopPresenca: {fileID: 0}
+  volumeParada: 0.25
+  volumeAndando: 0.7
+  aoPerseguir: {fileID: 0}
+  volumeAoPerseguir: 1
+  alcance: 14
+--- !u!114 &571916035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571916031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e46768da1eeeb489a121ae090075a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SequenciaDeCaptura
+  somDaCaptura: {fileID: 0}
+  escuroNaHora: 0.82
+  tempoDoPuxao: 0.7
+  distanciaDoPuxao: 6
+  pausaNoFim: 0.25
+  criaturaVaiJunto: 1
 --- !u!1 &573438099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +1980,10 @@ MonoBehaviour:
   psd: Assets/Sprites/Cenarios/quarto 2.psd
   detectarMoveis: 1
   amostraParede: {x: 0.45, y: 0.5}
+  vaosNaParede: []
+  buracosNaPintura: []
+  aberturasNaPintura: []
+  buracosNoChao: []
 --- !u!1 &584558665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 651464283}
   - component: {fileID: 651464284}
+  - component: {fileID: 651464285}
   m_Layer: 0
   m_Name: Luz
   m_TagString: Untagged
@@ -2284,6 +2327,35 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &651464285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651464282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &685767981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +2902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935000127}
   - component: {fileID: 935000126}
+  - component: {fileID: 935000128}
   m_Layer: 0
   m_Name: Brilho
   m_TagString: Untagged
@@ -2918,6 +2991,35 @@ Transform:
   - {fileID: 1493541249}
   m_Father: {fileID: 354538699}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &935000128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935000125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &958471611
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,7 +3108,7 @@ MonoBehaviour:
     m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 0
+  m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 0}
@@ -4205,7 +4307,7 @@ MonoBehaviour:
     m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
-  m_StreamingVersion: 0
+  m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 1605554875}
@@ -4995,6 +5097,8 @@ MonoBehaviour:
   isGrabbing: 0
   isReading: 0
   isDead: 0
+  heldObject: {fileID: 0}
+  isOnStairs: 0
 --- !u!114 &1605554877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5070,6 +5174,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c2b1d1b469a874a8c98e6c23e8ee4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpriteController
+  estadoSubir: Climb
+  estadoEmpurrar: Push
+  estadoPuxar: Pull
+  estadoSegurar: Grab
+  estadoEscondida: Hide
+  estadoPega: Caught
+  estadoAbraco: Hug
+  estadoEscada: Stairs
 --- !u!114 &1605554881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,6 +5234,56 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!1 &1631123657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631123659}
+  - component: {fileID: 1631123658}
+  m_Layer: 0
+  m_Name: "Porta da ronda \u2192 02_Corredor1"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1631123658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631123657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6a77c46a807064a8e933aaded22b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortaDaRonda
+  comodoVizinho: 02_Corredor1
+  luzesQueTremem: []
+  sombraInicio: {fileID: 1756179405}
+  sombraFim: {fileID: 1906711856}
+--- !u!4 &1631123659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631123657}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.694858, y: 0, z: -1.23638}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1906711856}
+  - {fileID: 1756179405}
+  m_Father: {fileID: 2140164086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631155049
 GameObject:
   m_ObjectHideFlags: 0
@@ -5305,6 +5467,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1756179404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1756179405}
+  m_Layer: 0
+  m_Name: "Sombra: in\xEDcio"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1756179405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756179404}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.8392544, y: 0, z: 0.49345624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1631123659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772470080
 GameObject:
@@ -5501,6 +5694,37 @@ Transform:
   - {fileID: 154802278}
   - {fileID: 1177403924}
   m_Father: {fileID: 139458188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1906711855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906711856}
+  m_Layer: 0
+  m_Name: 'Sombra: fim'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1906711856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906711855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16074562, y: 0, z: 0.49345624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1631123659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014808243
 GameObject:
@@ -5737,19 +5961,19 @@ Camera:
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 2
-  m_GateFitMode: 1
+  m_GateFitMode: 2
   m_FOVAxisMode: 0
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 47.634377
+  m_FocalLength: 29.86014
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
   m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 20.25}
-  m_LensShift: {x: 0, y: -0.18103491}
+  m_SensorSize: {x: 21.946, y: 16.002}
+  m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -5757,10 +5981,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 200
-  field of view: 24
+  far clip plane: 5000
+  field of view: 30.000002
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -5784,8 +6008,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019860327}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5006917, z: -12.119126}
+  m_LocalRotation: {x: 0.06975647, y: 0, z: 0, w: 0.9975641}
+  m_LocalPosition: {x: -3.5120063, y: 1.7249432, z: -10.754484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5898,6 +6122,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4016279, y: 0.2552371, z: 0.6}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2140164084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140164086}
+  - component: {fileID: 2140164085}
+  m_Layer: 0
+  m_Name: Ronda do andar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140164085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140164084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18110c59c5120646abc9a22d9d363c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RondaNaCena
+  desligadaNestaCena: 0
+  inspetora: {fileID: 571916032}
+  pontosDeRonda:
+  - {fileID: 901050610}
+  - {fileID: 1501403851}
+  portas:
+  - {fileID: 1631123658}
+  esperaAoChegar: 3
+--- !u!4 &2140164086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140164084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1631123659}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &58347684392704561
 GameObject:
   m_ObjectHideFlags: 0
@@ -10047,3 +10324,4 @@ SceneRoots:
   - {fileID: 1451709506}
   - {fileID: 354538699}
   - {fileID: 72448902}
+  - {fileID: 2140164086}

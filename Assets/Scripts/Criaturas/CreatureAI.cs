@@ -66,6 +66,11 @@ public class CreatureAI : MonoBehaviour
     int   wpIndex;
     float waitTimer, stateTimer, noticeTimer, lastSeenTime = -99f;
     bool  sawHiding;
+    float farejarPor = -1f;            // > 0: a próxima procura é uma farejada deste tamanho (Farejar)
+    float bloqueadaPor;                // patrulha: tempo com o caminho bloqueado pela luz
+
+    /// <summary>Parada farejando (Farejar) neste momento.</summary>
+    public bool Farejando => State == CreatureState.Search && farejarPor > 0f;
 
     void Awake()
     {
@@ -129,7 +134,13 @@ public class CreatureAI : MonoBehaviour
             waitTimer += Time.deltaTime;
             if (waitTimer >= waitAtPoint) { waitTimer = 0f; wpIndex = (wpIndex + 1) % waypoints.Length; }
         }
-        else MoveTowards(target, patrolSpeed);
+        else if (!MoveTowards(target, patrolSpeed))
+        {
+            // Caminho bloqueado pela luz: espera um pouco e tenta o próximo ponto (senão ficaria parada para sempre).
+            bloqueadaPor += Time.deltaTime;
+            if (bloqueadaPor >= waitAtPoint) { bloqueadaPor = 0f; wpIndex = (wpIndex + 1) % waypoints.Length; }
+        }
+        else bloqueadaPor = 0f;
     }
 
     void TickInvestigate()
@@ -168,7 +179,7 @@ public class CreatureAI : MonoBehaviour
         stateTimer += Time.deltaTime;
         // Olha para os dois lados enquanto procura.
         if (Mathf.Repeat(stateTimer, 1.5f) < Time.deltaTime) facing = -facing;
-        if (stateTimer >= searchTime) SetState(CreatureState.Return);
+        if (stateTimer >= (farejarPor > 0f ? farejarPor : searchTime)) SetState(CreatureState.Return);
     }
 
     void TickReturn()
@@ -253,6 +264,7 @@ public class CreatureAI : MonoBehaviour
         stateTimer = 0f;
         noticeTimer = 0f;
         if (s != CreatureState.Chase) sawHiding = false;
+        if (s != CreatureState.Investigate && s != CreatureState.Search) farejarPor = -1f;
     }
 
     void Catch()
@@ -261,7 +273,10 @@ public class CreatureAI : MonoBehaviour
         // Tira a Luma do esconderijo se ela estiver em um.
         var interactor = player.GetComponent<PlayerInteractor>();
         if (interactor != null) interactor.ForceRelease();
-        if (GameManager.Instance != null) GameManager.Instance.PlayerCaught(this);
+        // Com SequenciaDeCaptura, a captura tem cena (tela escura, som, puxão) e ela chama o PlayerCaught no fim.
+        var seq = GetComponent<SequenciaDeCaptura>();
+        if (seq != null && seq.enabled) seq.Executar(this);
+        else if (GameManager.Instance != null) GameManager.Instance.PlayerCaught(this);
         SetState(CreatureState.Idle);
     }
 
@@ -295,6 +310,37 @@ public class CreatureAI : MonoBehaviour
         SetState(CreatureState.Investigate);
     }
 
+    /// <summary>
+    /// Vai até "ponto" e fica ali farejando por alguns segundos (olhando para os lados), depois volta à ronda.
+    /// Não acha quem está escondido: é só tensão (ex.: parar na frente do esconderijo da Luma).
+    /// </summary>
+    public void Farejar(Vector3 ponto, float segundos)
+    {
+        if (State == CreatureState.Chase) return;
+        lastKnownPos = ponto;
+        SetState(CreatureState.Investigate);
+        farejarPor = Mathf.Max(0.5f, segundos);
+    }
+
+    /// <summary>Coloca a criatura num lugar e faz dele o ponto de volta (ResetCreature).</summary>
+    public void Posicionar(Vector3 posicao)
+    {
+        startPos = posicao;
+        if (agent != null && agent.isOnNavMesh) agent.Warp(posicao);
+        else transform.position = posicao;
+    }
+
+    /// <summary>Troca os pontos da ronda (recomeça do primeiro) e volta a patrulhar, se não estiver perseguindo.</summary>
+    public void DefinirRonda(Transform[] pontos)
+    {
+        waypoints = pontos;
+        wpIndex = 0;
+        waitTimer = 0f;
+        bloqueadaPor = 0f;
+        if (State != CreatureState.Chase)
+            SetState(pontos != null && pontos.Length > 0 ? CreatureState.Patrol : CreatureState.Idle);
+    }
+
     public void SetIdle()   => SetState(CreatureState.Idle);
     public void SetPatrol() => SetState(CreatureState.Patrol);
 
@@ -303,6 +349,7 @@ public class CreatureAI : MonoBehaviour
         if (sprite != null && Mathf.Abs(facing.x) > 0.01f) sprite.flipX = facing.x < 0f;
         if (animator == null) return;
         string anim = State == CreatureState.Chase ? "Chase"
+                    : Farejando && animator.HasState(0, Animator.StringToHash("Sniff")) ? "Sniff"
                     : State == CreatureState.Idle || State == CreatureState.Search ? "Idle" : "Walk";
         int hash = Animator.StringToHash(anim);
         if (animator.HasState(0, hash)) animator.Play(hash);

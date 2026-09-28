@@ -86,6 +86,18 @@ Cada cena tem esse objeto (criado pelo menu **Umbra > Terror > Colocar sons na c
 
 O loop fica mais alto quando a criatura se move e some a ~14 m (campo *Alcance*).
 
+## 3b. Ronda da Inspetora no 2º andar — asset `Assets/Dados/Resources/RondaDoAndar.asset`
+
+| Campo | Arquivo sugerido | Duração | Onde toca |
+|---|---|---|---|
+| Passos (lista) | `Criaturas/inspetora_passo_01.wav` … `_06` | 0,3–0,6 s | ela andando no cômodo vizinho (pela parede) e chegando à porta no aviso. Pesados, arrastados, com estalo de galho |
+| Galhos Raspando | `Criaturas/inspetora_galhos_loop.wav` | 6–10 s, loop | galhos e cabelo raspando na parede/chão do outro lado da porta |
+| Porta Rangendo | `Efeitos/porta_rangendo_lenta.wav` | 1,5–2,5 s | a porta abrindo devagar pouco antes de ela entrar (e fechando quando sai) |
+| Farejar | `Criaturas/inspetora_farejar.wav` | 2–4 s | ela parada na frente de um esconderijo, farejando. Úmido, perto, lento |
+
+Captura (componente `SequenciaDeCaptura` na Inspetora de cada cena) > **Som Da Captura**: `Stingers/captura_inspetora.wav`,
+1–2 s, **alto** e seco (grito + galhos estalando). Vazio = um dos stingers gerais.
+
 ## 4. Sustos (`ScareFlash`) — campo **Stinger** de cada susto
 
 Opcional: sem som próprio, o susto usa um dos stingers gerais do AudioManager.
